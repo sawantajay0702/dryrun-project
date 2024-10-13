@@ -1,0 +1,29 @@
+version: '3.8'
+
+networks:
+  std-network:
+    driver: bridge
+
+services:
+  backend:
+    container_name: std-cont
+    build:
+      context: ./student-registration
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8080"
+    networks:
+      - std-network
+
+  frontend:
+    container_name: std-fd-cont
+    build:
+      context: ./stdudent-reg
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+    networks:
+      - std-network
+

@@ -1,0 +1,11 @@
+<p>student-registration works!</p>
+
+<form [formGroup]="studentregFG">
+    <input type="text" placeholder="Enter Firstname" [formControl]="firstName">
+
+    <input type="text" placeholder="Enter Lastname" [formControl]="lastName">
+
+    <input type="date"  placeholder="Enter DOB" [formControl]="dob">
+
+    <button (click)="registerStudent()">Register</button>
+</form>

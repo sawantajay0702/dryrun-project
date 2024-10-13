@@ -1,0 +1,1 @@
+package com.student_registration.repository;
